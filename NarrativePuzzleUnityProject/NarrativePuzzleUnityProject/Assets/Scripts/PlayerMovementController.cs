@@ -19,6 +19,7 @@ public class PlayerMovementController : MonoBehaviour
     [HideInInspector] public int playerID = 0;
     public MovementStates movementStates = MovementStates.HumanMoving;
     public bool isTransforming;
+    public ParticleSystem walkingPuff;
 
     [Header("Human variables")]
     public float moveSpeed;
@@ -183,6 +184,8 @@ public class PlayerMovementController : MonoBehaviour
         moveInput = new Vector3(character.GetAxisRaw("MoveHorizontal"), 0f, character.GetAxisRaw("MoveVertical"));
         //giving the player velocity and multiplies it by human speed
         moveVelocity = moveInput.normalized * moveSpeed;
+        //Setting the walking puff
+        walkingPuff.Play();
 
         if (Input.GetKey(KeyCode.A))
         {
@@ -203,6 +206,7 @@ public class PlayerMovementController : MonoBehaviour
         else
         {
             humanAnim.SetBool("isWalking", false);
+            walkingPuff.Stop();
         }
     }
     /*
@@ -233,6 +237,8 @@ public class PlayerMovementController : MonoBehaviour
         moveInput = new Vector3(character.GetAxisRaw("MoveHorizontal"), 0f, character.GetAxisRaw("MoveVertical"));
         //giving the player velocity and multiplies it by rabbit speed
         moveVelocity = moveInput.normalized * rabbitSpeed;
+        //Setting the walking puff
+        walkingPuff.Play();
 
         if (Input.GetKey(KeyCode.A))
         {
@@ -253,6 +259,7 @@ public class PlayerMovementController : MonoBehaviour
         else
         {
             rabbitAnim.SetBool("isWalking", false);
+            walkingPuff.Stop();
         }
     }
     /*
@@ -283,6 +290,8 @@ public class PlayerMovementController : MonoBehaviour
         moveInput = new Vector3(character.GetAxisRaw("MoveHorizontal"), 0f, character.GetAxisRaw("MoveVertical"));
         //giving the player velocity and multiplies it by turtle speed
         moveVelocity = moveInput.normalized * turtleSpeed;
+        //Setting the walking puff
+        walkingPuff.Play();
 
         if (Input.GetKey(KeyCode.A))
         {
@@ -303,6 +312,7 @@ public class PlayerMovementController : MonoBehaviour
         else
         {
             turtleAnim.SetBool("isWalking", false);
+            walkingPuff.Stop();
         }
     }
     /*
@@ -333,6 +343,8 @@ public class PlayerMovementController : MonoBehaviour
         moveInput = new Vector3(character.GetAxisRaw("MoveHorizontal"), 0f, character.GetAxisRaw("MoveVertical"));
         //giving the player velocity and multiplies it by turtle speed
         moveVelocity = moveInput.normalized * deerSpeed;
+        //Setting the walking puff
+        walkingPuff.Play();
 
         if (Input.GetKey(KeyCode.A))
         {
@@ -353,6 +365,7 @@ public class PlayerMovementController : MonoBehaviour
         else
         {
             deerAnim.SetBool("isWalking", false);
+            walkingPuff.Stop();
         }
     }
     /*

@@ -30,6 +30,16 @@ public class RabbitEmotions : MonoBehaviour
             else
             {
                 this.gameObject.layer = 0;
+                isUnderground = false;
+                diggingPS.SetActive(false);
+            }
+        }
+        else
+        {
+            if (diggingPS.active)
+            {
+                this.gameObject.layer = 0;
+                isUnderground = false;
                 diggingPS.SetActive(false);
             }
         }

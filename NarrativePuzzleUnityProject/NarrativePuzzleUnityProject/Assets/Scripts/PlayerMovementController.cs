@@ -28,14 +28,17 @@ public class PlayerMovementController : MonoBehaviour
     [Header("Rabbit variables")]
     public float rabbitSpeed;
     public GameObject rabbitMesh;
+    public Animator rabbitAnim;
 
     [Header("Turtle variables")]
     public float turtleSpeed;
     public GameObject turtleMesh;
+    public Animator turtleAnim;
 
     [Header("Deer variables")]
     public float deerSpeed;
     public GameObject deerMesh;
+    public Animator deerAnim;
 
     [Header("VFX")]
     public GameObject transformationPS;
@@ -137,7 +140,7 @@ public class PlayerMovementController : MonoBehaviour
             {
                 transform.rotation = Quaternion.LookRotation(playerDirection, Vector3.up);
                 Vector3 tempRotationValue = transform.rotation.eulerAngles;
-                tempRotationValue.y = tempRotationValue.y + 17;
+                tempRotationValue.y = tempRotationValue.y;
                 transform.rotation = Quaternion.Euler(tempRotationValue);
                 playerLookDirection.x = playerDirection.x;
                 playerLookDirection.y = playerDirection.z;
@@ -151,7 +154,7 @@ public class PlayerMovementController : MonoBehaviour
                 {
                     transform.rotation = Quaternion.LookRotation(playerDirectionAlt, Vector3.up);
                     Vector3 tempRotationValue = transform.rotation.eulerAngles;
-                    tempRotationValue.y = tempRotationValue.y + 17;
+                    tempRotationValue.y = tempRotationValue.y;
                     transform.rotation = Quaternion.Euler(tempRotationValue);
                     playerLookDirection.x = playerDirectionAlt.x;
                     playerLookDirection.y = playerDirectionAlt.z;
@@ -230,6 +233,27 @@ public class PlayerMovementController : MonoBehaviour
         moveInput = new Vector3(character.GetAxisRaw("MoveHorizontal"), 0f, character.GetAxisRaw("MoveVertical"));
         //giving the player velocity and multiplies it by rabbit speed
         moveVelocity = moveInput.normalized * rabbitSpeed;
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            rabbitAnim.SetBool("isWalking", true);
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            rabbitAnim.SetBool("isWalking", true);
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            rabbitAnim.SetBool("isWalking", true);
+        }
+        else if (Input.GetKey(KeyCode.W))
+        {
+            rabbitAnim.SetBool("isWalking", true);
+        }
+        else
+        {
+            rabbitAnim.SetBool("isWalking", false);
+        }
     }
     /*
     *
@@ -259,6 +283,27 @@ public class PlayerMovementController : MonoBehaviour
         moveInput = new Vector3(character.GetAxisRaw("MoveHorizontal"), 0f, character.GetAxisRaw("MoveVertical"));
         //giving the player velocity and multiplies it by turtle speed
         moveVelocity = moveInput.normalized * turtleSpeed;
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            turtleAnim.SetBool("isWalking", true);
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            turtleAnim.SetBool("isWalking", true);
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            turtleAnim.SetBool("isWalking", true);
+        }
+        else if (Input.GetKey(KeyCode.W))
+        {
+            turtleAnim.SetBool("isWalking", true);
+        }
+        else
+        {
+            turtleAnim.SetBool("isWalking", false);
+        }
     }
     /*
     *
@@ -288,6 +333,27 @@ public class PlayerMovementController : MonoBehaviour
         moveInput = new Vector3(character.GetAxisRaw("MoveHorizontal"), 0f, character.GetAxisRaw("MoveVertical"));
         //giving the player velocity and multiplies it by turtle speed
         moveVelocity = moveInput.normalized * deerSpeed;
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            deerAnim.SetBool("isWalking", true);
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            deerAnim.SetBool("isWalking", true);
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            deerAnim.SetBool("isWalking", true);
+        }
+        else if (Input.GetKey(KeyCode.W))
+        {
+            deerAnim.SetBool("isWalking", true);
+        }
+        else
+        {
+            deerAnim.SetBool("isWalking", false);
+        }
     }
     /*
     *

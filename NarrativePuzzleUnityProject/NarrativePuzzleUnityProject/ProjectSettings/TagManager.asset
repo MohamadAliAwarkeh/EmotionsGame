@@ -12,6 +12,8 @@ TagManager:
   - PickUp1
   - PickUp2
   - Pickup
+  - ZoneOne
+  - ZoneTwo
   layers:
   - Default
   - TransparentFX

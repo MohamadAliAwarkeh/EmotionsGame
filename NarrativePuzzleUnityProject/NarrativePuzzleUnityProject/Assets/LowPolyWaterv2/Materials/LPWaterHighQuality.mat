@@ -57,7 +57,7 @@ Material:
     - _EnableShadows: 0
     - _FoamScale: 20
     - _FoamSpeed: 0.3
-    - _FoamSpread: 1
+    - _FoamSpread: 3.62
     - _FresPower: 1.5
     - _HQFoam: 1
     - _Height: 0.5
